@@ -8,10 +8,12 @@ HunterGate(
 
 project(boost-example)
 
-hunter_add_package(Boost COMPONENTS filesystem)
-find_package(Boost 1.69 REQUIRED filesystem)
+find_package(Threads)
+
+hunter_add_package(Boost)
+find_package(Boost 1.69 REQUIRED)
 
 add_executable(bex main.cpp)
-target_link_libraries(bex Boost::filesystem)
+target_link_libraries(bex Threads::Threads)
 target_compile_features(bex PRIVATE cxx_constexpr)
 #target_compile_definitions(bex PRIVATE BOOST_CHRONO_VERSION=2)
