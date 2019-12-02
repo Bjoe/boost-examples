@@ -8,10 +8,10 @@ HunterGate(
 
 project(boost-example)
 
-hunter_add_package(Boost COMPONENTS filesystem)
-find_package(Boost 1.69 REQUIRED filesystem)
+hunter_add_package(Boost COMPONENTS regex)
+find_package(Boost 1.69 REQUIRED regex)
 
 add_executable(bex main.cpp)
-target_link_libraries(bex Boost::filesystem)
+target_link_libraries(bex Boost::regex)
 target_compile_features(bex PRIVATE cxx_constexpr)
 #target_compile_definitions(bex PRIVATE BOOST_CHRONO_VERSION=2)
