@@ -1,10 +1,18 @@
-#include <iostream>
-
+#include <boost/tokenizer.hpp>
 #include <boost/filesystem.hpp>
+#include <string>
+#include <iostream>
 
 int main()
 {
-    std::cout << "Hello boost\n";
+  boost::filesystem::path file{"example.csv"};
+  boost::filesystem::ifstream infile{file};
 
-    return 0;
+  typedef boost::tokenizer<boost::escaped_list_separator<char>> tokenizer;
+
+  for(std::string line; std::getline(infile, line);) {
+    tokenizer tok{line};
+    for (const auto &t : tok)
+        std::cout << t << '\n';
+  }
 }
