@@ -9,7 +9,7 @@ HunterGate(
 project(boost-example)
 
 hunter_add_package(Boost COMPONENTS filesystem)
-find_package(Boost 1.69 REQUIRED filesystem)
+find_package(Boost CONFIG REQUIRED filesystem)
 
 add_executable(bex main.cpp)
 target_link_libraries(bex Boost::filesystem)
