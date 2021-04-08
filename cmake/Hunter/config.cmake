@@ -1,0 +1,1 @@
+hunter_config(Boost VERSION 1.72.0-p0 CMAKE_ARGS USE_CONFIG_FROM_BOOST=ON)
